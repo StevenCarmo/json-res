@@ -1,0 +1,10 @@
+{
+  "projectName": "",
+  "genxVersion": 1,
+  "projectType": "node_basic",
+  "options": {
+    "testing": true,
+    "build": true,
+    "documentation": true
+  }
+}

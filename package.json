@@ -1,0 +1,40 @@
+{
+    "name": "json-res",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.min.js",
+    "module": "dist/index.es.min.js",
+    "types": "dist/index.d.ts",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watch-all",
+        "test:output": "jest --json --outputFile=foo.json",
+        "create-temp-dist": "_create-temp-dist",
+        "build": "run-s _pre-build _tsc _bundle _create-dist _post-build",
+        "_create-dist": "node ./scripts/build/create-dist.js",
+        "_pre-build": "node ./scripts/build/pre-build.js",
+        "_post-build": "node ./scripts/build/post-build.js",
+        "_clear": "rimraf ./build/compiled/*",
+        "_tsc": "tsc --p ./",
+        "_bundle": "node ./scripts/build/bundle.js"
+    },
+    "author": "Steven Carmo",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "^24.0.15",
+        "@types/node": "^10.17.6",
+        "jest": "^24.8.0",
+        "npm-run-all": "^4.1.5",
+        "shelljs": "0.8.3",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.2",
+        "rimraf": "^2.6.3",
+        "rollup": "^1.17.0",
+        "uglify-es": "^3.3.9"
+    }
+}
